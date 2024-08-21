@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		n=parseInt(prompt("enter number for check armstrong"))
+		i=n
+		temp=n;
+		c=0,r=0;
+		sum=0;
+		while(n!=0){
+			n=Math.floor(n/10);
+			c++;
+		}
+		while(temp!=0){
+			r=temp%10;
+			temp=Math.floor(temp/10);
+			a=Math.pow(r,c);
+			sum=sum+a;
+		}
+		if(i==sum){
+			document.write("number is armstrong:");
+		}
+		else{
+			document.write("number is not armstrong:")
+		}
+	</script>
+</body>
+</html>
