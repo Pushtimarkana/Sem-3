@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		n=prompt("enter a word:");
+		let a=new Array();
+		for(let i=0;i<n.length;i++){
+			a[i]=n.charAt(i);
+		}
+		let c=0;
+		fi=0,li=0;
+		for(i=0;i<n.length;i++){
+			if(a[i]=='a'){
+				if(c==0){
+					fi=i
+					c++;
+				}
+				else{
+					li=i;
+				}
+			}
+		}
+		for(let i=fi+1;i<li;i++){
+			document.write(a[i]);
+		}
+	</script>
+</body>
+</html>
