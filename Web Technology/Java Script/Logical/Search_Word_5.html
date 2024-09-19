@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		let index=0;
+		n=parseInt(prompt("enter size of array:"));
+		 let a=new Array(n);
+		//arr={'you','are','mine','hellow'}
+		 for(let i=0;i<n;i++){
+		 	a[i]=prompt("enter a["+i+"]");
+		 }
+		w=prompt("enter word which you want to search:");
+		index=0;
+		for(let i=0;i<n;i++){
+			str=a[i];
+			if(str==w){
+				index=i;
+			}
+		}
+		document.write("indes is:"+index);
+	</script>
+</body>
+</html>
