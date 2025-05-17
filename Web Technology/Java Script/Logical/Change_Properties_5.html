@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head{
+            color: darkblue;
+            font-size:100px ;
+            align: center;
+        }
+        #paragraph{
+            font-size: 30px;
+            align: center;
+        }
+        button{
+            font-size: 30px;
+            background-color: rgb(72, 145, 193);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">The Animals</h1>
+    <p id="paragraph">Animals are multicellular, eukaryotic organisms in the biological kingdom Animalia.With few exceptions, animals consume organic material, breathe oxygen, have myocytes and are able to move, can reproduce sexually, and grow from a hollow sphere of cells, the blastula, during embryonic development. Animals form a clade, meaning that they arose from a single common ancestor.</p>
+    <button id="animals">More Aniaml</button>
+    <button id="btn">Change</button>
+    <div>
+        <div>
+            <img id="panda" src=""><br>
+        </div>
+        <div>
+            <img id="lion" src=""><br>
+
+        </div>
+        <div>
+            <img id="jeguar" src=""><br>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("animals").addEventListener('click',()=>{
+
+            panda.src="https://animals.sandiegozoo.org/sites/default/files/2016-09/animals_hero_panda.jpg";
+            jeguar.src="https://png.pngtree.com/background/20230613/original/pngtree-jaguar-wallpaper-image-of-the-animal-picture-image_3430912.jpg"; 
+        });
+        document.getElementById("btn").addEventListener('click',()=>{
+            head.style.color="black";
+            head.style.fontSize="70px";
+        });
+
+    </script>
+</body>
+</html>

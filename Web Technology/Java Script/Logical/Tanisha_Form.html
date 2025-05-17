@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation form</title>
+    <style type="text/css">
+        input:focus{
+                background-color: rgb(205, 62, 26);
+        }
+        input:hover{
+            background-color: rgb(171, 121, 46);
+        }
+        body{
+            height: 700px;
+            background-image:url("https://static.vecteezy.com/system/resources/previews/025/053/405/large_2x/majestic-african-cheetah-staring-walking-in-wilderness-danger-and-beauty-generated-by-ai-free-photo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin-top: 0%;
+        }
+        .form{
+            font-size: 30px;
+            width: 50%;
+            height: 50%;
+            text-shadow: 20%;
+            margin-top: 0%;
+            margin-left: 25%;
+            margin-right: 25%;
+            color: white;
+            justify-content: center;
+            background: transparent;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+         }
+         input{
+            width: 100%;
+            height: 75%;
+            border-radius: 20px;
+            border: 2px solid black;
+         }
+         .title{
+            font-family: sans-serif;
+                font-size: 40px;
+                align-self: center;
+                margin-left: 100%;
+                color: black;
+                font-size:50px;
+                text-shadow :20%;
+                border: black;
+         }
+    </style>
+</head>
+<body>
+    
+    <table class="form">
+    <th class="title">Validation Form</th>
+    <div>
+        <tr>
+        <td><label>User name</label></td>
+        <td><input type="text" id="name" class="name"></td>
+        <br>
+        <br>
+    </tr>
+    </div>
+    <div>
+        <tr>
+        <td><label>Password</label></td>
+        <td><input type="text" id="password"></td>
+        <br>
+        <br>
+    </tr>
+    </div>
+    <div><tr>
+        <td><label>Recheck Password </label></td>
+        <td><input type="text" id="repeatPassword"></td>
+        <br>
+        <br>
+    </tr>
+    </div>
+    <div>
+        <tr>
+        <td><label>Age</label></td>
+        <td><input type="date" id="dob"></td>
+        <br>
+        <br>
+    </tr>
+    </div>
+    <div>
+        <tr>
+        <td><label>Enrollment number</label></td>
+        <td><input type="text" id="enroll"></td>
+        <br>
+        <br>
+    </tr>
+    </div>
+    <div>
+        <tr>
+        <td><label>Email</label></td>
+        <td><input type="email" id="email"></td>
+        <br>
+        <br>
+        </tr>
+    </div>
+    <tr>
+      <td>  
+    <button type="submit" onclick="checkValidation()" style="background-color: rgb(184, 125, 15);
+        width:30%;
+        height: 100%;
+        margin-left: 50%;
+        margin-top: 5%;
+        ">Submit</button></td>
+    
+</tr>
+<!-- </div> -->
+</table>
+    <script>
+        function checkValidation(){
+            var uname=document.getElementById("name").value;
+            var pwd=document.getElementById("password").value;
+            var rpwd=document.getElementById("repeatPassword").value;
+            var age=document.getElementById("dob").value;
+            var enroll=document.getElementById("enroll").value;
+            var email=document.getElementById("email").value;
+            
+            if(uname.length<8){
+                alert("Invalid user name!!");
+                document.getElementById("name").value=null
+            }
+            else{
+                alert("valid user name")
+            }
+
+            
+                //pattern="(?=.[0-9])(?=[@#$&*!%])[/da-zA-Z]{8,12}"
+                pattern=/^(?=.[0-9])(?=.[!@#$%^&])[a-zA-Z0-9!@#$%^&]{8,12}$/;
+                regex=new RegExp(pattern);
+                if(!regex.test(pwd)){
+                    alert("Enter valid password")
+                    document.getElementById("password").value=null
+                }
+                else{
+                    alert("valid password")
+                }
+            
+    
+                var rpwd=document.getElementById("repeatPassword").value;
+                if(pwd!=rpwd){
+                    alert("enter correct repeat password");
+                    document.getElementById("name").value=null
+                }
+                else{
+                    alert("Valid repeat password")
+                }
+
+            //validation of age
+               // var pattern=""
+                // let dob=document.getElementById("dob").value;
+                // dob=new Data(dob);
+                // date=new Date();
+                // //var regex=new RegExp(pattern);
+                // if((date.getFullYear()-dob.getFullYear()) < 18){
+                //     alert("Invalid age");
+                //     document.getElementById("age").value=null
+                // }
+                // else{
+                //     alert("valid age")
+                // }
+
+            var dob=document.getElementById("dob").value;
+            day=parseInt(dob.substr(0,2));
+            month=parseInt(dob.substr(2,4));
+            year=parseInt(dob.substr(4,8));
+            var today=new Date();
+            var age=today.getFullYear()-year;
+            //18
+            //1-03-2006
+            //today:14-07-2024
+            //17
+
+            if(today.getMonth()<month && today.getDay()<day){
+                age--;
+            }
+            if(age<18){
+                    alert("invalid age");
+            }
+            else{
+                alert("valid age");
+            }
+
+            //validation of email
+
+                //var pattern="^[\\w-\.]*[\\w-\.]\@[\\w]\.+[\\w]+[\\w]$"
+                //var pattern=/^[A-Za-z\._\-0-9][@][A-Za-z][\.][a-z]{2,4}$/
+                pattern=/^[a-zA-Z0-9][@][a-zA-Z0-9][.][a-zA-Z]$/;
+                regex=new RegExp(pattern);
+                if(!regex.test(email)){
+                    alert("Invalid email");
+                    document.getElementById("email").value=null
+                }
+                else{
+                    alert("Valid email address")
+                }
+
+           //validation of enrollment number
+                if(enroll.length>11){
+                    alert("Invalid number ,Enter enroll number of 11 digit")
+                    document.getElementById("enroll").value=null
+                }
+                else{
+                    alert("valid enrollment number")
+                }
+        }
+    </script>
+</body>
+</html>
