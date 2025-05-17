@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring</title>
+</head>
+<body>
+    <script>
+        student= {
+                name: 'riya',
+                rollNo: 112,
+                phone:1021021021,
+                dept:'CSE',
+                sem:3
+        } 
+        // let {name,rollNo,phone}=student
+        // console.log(name)
+
+        arr=[1,2,3,4,5,6,7,89]
+        let [first,second,third]=arr;
+        console.log(first);
+
+        //rest operator
+        let{name,rollNo,phone,...other}=student;
+        console.log(other);
+
+    </script>
+</body>
+</html>

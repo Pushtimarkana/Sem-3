@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class in js</title>
+</head>
+<body>
+    <script>
+        // constructor method to assign value
+        class Student{
+            name;
+            enrollmentNo;
+            constructor(name,enrollmentNo){
+                this.name=name;
+                this.enrollmentNo=enrollmentNo;
+            }        
+        }
+        s = new Student("tanisha",2301010);
+        console.log(s.name);
+
+        //setter method for assign value
+        class Car{
+            name;
+            year;
+            setName(name){
+                this.name=name;
+            }
+            setYear(year){
+                this.year=year;
+            }
+        }
+        c1=new Car();
+        c1.setName('mercedes');
+        c1.setYear(2022);
+        console.log(c1.year);
+    </script>
+</body>
+</html>

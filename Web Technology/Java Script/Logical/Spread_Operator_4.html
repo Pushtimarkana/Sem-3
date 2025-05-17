@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread</title>
+</head>
+<body>
+    <script>
+        student1={
+            name:'riya',
+            rollNo:112
+        };
+        student2 = {
+                name1: 'arya',
+                rollNo1: 115
+        };
+        student3 = {
+                name2: 'mahek',
+                rollNo2: 116
+        };
+        student4 = {
+                name3: 'marcus',
+                rollNo3: 120
+        };
+        //jo koi object ma same name vali property hase to last vadi excute thase aagad ni override thy jase 
+        let student={
+            ...student1,
+            ...student2,
+            ...student3,
+            ...student4}
+        console.log("before: ",student);
+
+        //change name of student1
+        student={
+            ...student1,
+            name:'het'
+        };
+        console.log("after change by student1 student:: ",student);
+        console.log("student1:",student1)
+    </script>
+</body>
+</html>
