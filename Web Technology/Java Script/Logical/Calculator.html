@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txtbox{
+            
+            width: 100px;
+            height: 20px;
+           margin-bottom: 20px;
+        }
+        #button{
+            background-color: cornflowerblue;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+    <div>
+        <input id="txtbox" type="text">
+    </div>
+    <div>
+        <button id="button" onclick="takeNumber('7')">7</button>
+        <button id="button" onclick="takeNumber('8')">8</button>
+        <button id="button" onclick="takeNumber('9')">9</button>
+        <button id="button" onclick="takeNumber('-')">-</button>
+    </div>
+    <div>
+        <button id="button" onclick="takeNumber('4')">4</button>
+        <button id="button" onclick="takeNumber('5')">5</button>
+        <button id="button" onclick="takeNumber('6')">6</button>
+        <button id="button" onclick="takeNumber('+')">+</button>
+    </div>
+    <div>
+        <button id="button" onclick="takeNumber('1')">1</button>
+        <button id="button" onclick="takeNumber('2')">2</button>
+        <button id="button" onclick="takeNumber('3')">3</button>
+        <button id="button" onclick="takeNumber('/')">/</button>
+    </div>
+    <div>
+        <button id="button" onclick="takeNumber('0')">0</button>
+        <button id="button" onclick="takeNumber('.')">.</button>
+        <button id="button" onclick="getAnswer('=')">=</button>
+        <button id="button" onclick="takeNumber('X')">X</button>
+    </div>
+    </div>
+    <script>
+       
+    
+        function takeNumber(id){
+            document.getElementById('txtbox').value+=id; 
+       }
+       function getAnswer(id){
+            temp=document.getElementById('txtbox').value
+            temp2=eval(temp);
+            document.getElementById('txtbox').value=temp2
+       }
+    </script>
+</body>
+</html>

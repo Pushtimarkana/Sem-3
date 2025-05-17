@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div>
+		<input id="txtname" type="text" name="">
+		<br>
+		<input id="txtenroll" type="text" name="">
+		<br>
+		<label>Password</label>
+        <input type="text" id="password">
+		<br>
+		<label>Recheck Password </label>
+        <input type="text" id="repeatPassword">
+		<button onclick="validation()">click</button>
+	</div>
+	<div id="answer"></div>
+	<script type="text/javascript">
+		function validation(){
+			pattern_name="(?=.*[0-9])(?=.[!@#$%])(?=.[A-Z a-z]){8,12}"
+			// pattern_enroll="^23[0-9]{9}$"
+			// pattern_pass="(?=.[0-9])"
+			regexp_name=new RegExp(pattern_name);
+			// regexp_enroll=new RegExp(pattern_enroll);
+			// regxp_pass=new RegExp(pattern_pass);
+			 name=document.getElementById('txtname').value
+			// enroll=document.getElementById('txtenroll').value
+			// pwd=document.getElementById('password').value
+			c=0;
+			if(regexp_name.test(name)){
+				c++;
+				document.getElementById('answer').innerHTML="valid name"
+			}
+			else{
+				document.getElementById('answer').innerHTML="invalid name"
+			}
+			// if(regexp_enroll.test(enroll)){
+			// 	c++;
+			// }
+			// else{
+			// 	document.getElementById('answer').innerHTML="invalid enrollment no"
+			// }
+			// if(!regxp_pass.test(pwd)){
+			// 	alert("enter valid password:");
+			// }
+			// else{
+			// 	c++;
+			// }
+			// if(c==3){
+			// 	document.getElementById('answer').innerHTML="valid form"
+			// }
+		}
+	</script>
+</body>
+</html>

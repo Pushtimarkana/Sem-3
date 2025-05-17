@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Validation Form</h1>
+    <div>
+        <label>User name</label>
+        <input type="text" id="name">
+        <br>
+        <br>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="text" id="password">
+        <br>
+        <br>
+    </div>
+    <div>
+        <label>Recheck Password </label>
+        <input type="text" id="repeatPassword">
+        <br>
+        <br>
+    </div>
+    <div>
+        <label>Date of Birth</label>
+        <input type="text" id="dob">
+        <br>
+        <br>
+    </div>
+    <div>
+        <label>Enrollment number</label>
+        <input type="text" id="enroll">
+        <br>
+        <br>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" id="email">
+        <br>
+        <br>
+    </div>
+    <div><button onclick="checkValidation()">Submit</button></div>
+
+    <script>
+        function checkValidation(){
+            var uname=document.getElementById("name").value;
+           
+        
+            if(uname.length<8){
+                alert("Invalid user name!!");
+                //document.getElementById("name").value=null
+            }
+
+            var pwd=document.getElementById("password").value;
+            if(pwd.length<8||pwd.length>12){
+                alert('password shold be between 8-12 characters');
+            }
+            else{
+                pattern_pwd="(?=.*[@#$&*!%])(?=.*[0-9])(?=.*[a-zA-Z])"
+                regex=new RegExp(pattern_pwd);
+                if(!regex.test(pwd)){
+                    alert("Enter valid password")
+                    //document.getElementById("password").value=null
+                }
+            }
+            var rpwd=document.getElementById("repeatPassword").value;
+            if(pwd!=rpwd){
+                alert("enter correct password");
+                document.getElementById("name").value=null           
+            }
+                
+            var dob=document.getElementById("dob").value;
+                day=parseInt(dob.substr(0,2));
+                month=parseInt(dob.substr(2,4));
+                year=parseInt(dob.substr(4,8));
+            var today=new Date();
+            var age=today.getFullYear()-year;
+            if(today.getMonth()<month || today.getDay()<day){
+                age--;
+            }
+            if(age<18){
+                    alert("enter dob with age is 18:");
+            }
+
+
+            var enroll=document.getElementById("enroll").value
+            pattern_enroll="^[0-9]{11}$"
+            regex_enroll=new RegExp(pattern_enroll);
+            if(!regex_enroll.test(enroll)){
+                alert("enter enrollment number properly");
+            }
+
+            var email=document.getElementById("email").value;
+            pattern_email="^[0-9A-za-z._%+-]+@[a-zA-z0-9.-]+\\.[a-zA-Z]{2,}$"
+            regex_email=new RegExp(pattern_email);
+            if(!regex_email.test(email)){
+                alert("enter email properly");
+            }    
+
+        }
+    </script>
+</body>
+</html>
